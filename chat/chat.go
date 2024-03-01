@@ -2,7 +2,7 @@ package chat
 
 import (
 	"context"
-	"github.com/pwh-pwh/aiwechat-vercel/config"
+	"github.com/donnior/godemo-vercel/config"
 	"github.com/sashabaranov/go-openai"
 	"os"
 	"time"

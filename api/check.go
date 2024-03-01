@@ -2,7 +2,7 @@ package api
 
 import (
 	"fmt"
-	"github.com/pwh-pwh/aiwechat-vercel/config"
+	"github.com/donnior/godemo-vercel/config"
 	"net/http"
 )
 
