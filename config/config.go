@@ -3,7 +3,7 @@ package config
 import (
 	// "errors"
 	// "os"
-	// "sync"
+	"sync"
 )
 
 const (
@@ -13,7 +13,7 @@ const (
 
 var UseType = ""
 
-// var Cache sync.Map
+var Cache sync.Map
 
 func CheckConfig() error {
 	// gptToken := os.Getenv("GPT_TOKEN")
