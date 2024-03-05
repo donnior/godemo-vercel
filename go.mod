@@ -1,6 +1,6 @@
 module github.com/donnior/godemo-vercel
 
-go 1.21
+// go 1.21
 
 require (
 	github.com/sashabaranov/go-openai v1.20.2

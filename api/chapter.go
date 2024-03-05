@@ -6,9 +6,10 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
-	"net/url"
 
 	"github.com/PuerkitoBio/goquery"
+	"github.com/donnior/godemo-vercel/util"
+
 	// "github.com/donnior/godemo-vercel/util"
 	log "github.com/sirupsen/logrus"
 	logger "github.com/sirupsen/logrus"
@@ -64,7 +65,7 @@ func fetchChapter(bookLink string, chapterSelector string, alertiveSelector stri
 			if ok {
 				c := Chapter{
 					Title: a.Text(),
-					Link:  RelativePathToAbsolutePath(link, bookLink),
+					Link:  util.RelativePathToAbsolutePath(link, bookLink),
 				}
 				topics = append(topics, c)
 			} else {
@@ -189,17 +190,4 @@ func (fetcher *Fetcher) FetchHtmlAsDoc(url string) (*goquery.Document, error) {
 	// fmt.Println("got utf8: ", utfBody)
 	doc, err := goquery.NewDocumentFromReader(resp.Body)
 	return doc, err
-}
-
-func RelativePathToAbsolutePath(href string, base string) string {
-	uri, err := url.Parse(href)
-	if err != nil {
-		return " "
-	}
-	baseUrl, err := url.Parse(base)
-	if err != nil {
-		return " "
-	}
-	return baseUrl.ResolveReference(uri).String()
-
 }
