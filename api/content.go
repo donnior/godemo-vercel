@@ -10,7 +10,7 @@ import (
 
 func ContentHandler(w http.ResponseWriter, req *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	res, err := pkg.GetContent("https://www.sumingxs.com/xiaoshuo/2/", pkg.SiteConfig{
+	res, err := pkg.GetContent("https://www.sumingxs.com/xiaoshuo/2/70671/", pkg.SiteConfig{
 		Domain:          "www.sumingxs.com",
 		ChapterSelector: "#list li",
 		ContentSelector: "#c p",
