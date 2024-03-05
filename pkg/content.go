@@ -1,4 +1,4 @@
-package internal
+package pkg
 
 import (
 	"fmt"
@@ -18,7 +18,6 @@ func GetContent(chapterLink string, config SiteConfig) ([]string, error) {
 }
 
 func fetchContent(chapterLink string, contentSelector string, alertiveSelector string) ([]string, error) {
-
 	f := DefaultWebAgentFetcher()
 	doc, err := f.FetchHtmlAsDoc(chapterLink)
 	if err != nil {
@@ -41,8 +40,4 @@ func fetchContent(chapterLink string, contentSelector string, alertiveSelector s
 	})
 
 	return texts, nil
-
-	// return []Chapter{
-	// 	{Link: "some link", Title: "some title 2"},
-	// }, nil
 }
