@@ -3,9 +3,10 @@ package api
 import (
 	"context"
 	"fmt"
-	"github.com/sashabaranov/go-openai"
 	"net/http"
 	"os"
+
+	"github.com/sashabaranov/go-openai"
 )
 
 func Chat(w http.ResponseWriter, req *http.Request) {
